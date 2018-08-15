@@ -1,23 +1,12 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import MainView from './mainView/mainView';
-import HomeView from './homeView/homeView';
-import AboutView from './aboutView/aboutView';
 import { Provider } from 'react-redux';
-import store from '../store/store'
+import store from '../store/store';
+import Layout from './Layout/Layout'
 
-const getRoutes = function() {
-    return (
+const getRoutes = () => (
         <Provider store={store}>
-            <div>
-                <Route name="Main" component={MainView} />
-                <Switch>
-                    <Route exact path="/" component={HomeView} />
-                    <Route path="/about" component={AboutView} />
-                </Switch>
-            </div>
+            <Layout />
         </Provider>
-    )
-};
+);
 
 export default getRoutes;
